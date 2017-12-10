@@ -23,8 +23,17 @@ io.on('connection', function(socket){
 	console.log(socket.id);
 	if (players.length < 2) {
 		const player = new Player(socket.id, players.length === 1 ? "red" : "blue");
-		console.log(player);
 		players.push(player);
+
+		console.log(players);
+
+
+		if (players.length === 2) {
+			console.log('barev');
+			io.emit('start game', {armen: "armen"});
+			io.sockets.sockets[players[0].id].emit('your turn', {armen: "armen"});
+		}
+
 	} else {
 		io.emit('no space', {message: "Not enough space go home"});
 	}

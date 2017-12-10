@@ -14,8 +14,19 @@ const send = function(){
 	socket.emit('user step', value);
 };
 
-socket.on('result', data=>{
+socket.on('result', data =>{
 	console.log(data);
 	document.getElementById("history").innerHTML = data.history;
 	document.getElementById("total").innerHTML = data.total;
-})
+});
+
+
+socket.on('start game', function(data) {
+	console.log("game started");
+	$('.game-components').removeClass('invisible');
+	$('#wait').addClass('invisible');
+});
+
+socket.on('your turn', data => {
+	console.log("your turn worked");
+});
