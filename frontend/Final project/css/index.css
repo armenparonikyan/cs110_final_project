@@ -12,42 +12,29 @@ body {
 .content {
 	height: 500px;
 	background: url('http://thepropertyeducationgroup.com/wp-content/uploads/2016/01/bst_ninja-1030x579.jpg');
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
+	background-size: cover; 
 }
 
 .operators {
-	position: absolute;
-	top: 280px;
-	left: 780px;
 	width: 210px;
 	height: 210px;
+	float: left;
+	overflow: hidden;
 }
 
 
 .operators img {
 	width: 75px;
-	height: 70px
+	height: 70px;
 }
 
 #shur1 {
-	margin-left: 70px
+	display: inline;
 }
-
 #shur2 {
-	display: inline-block;
-	margin-left: 15px
+	display: inline
 }
-
-#shur3 {
-	display: inline-block;
-	margin-left: 30px
-}
-
-#shur4 {
-	margin-left: 70px
-}
-
-
 
 .info {
 	height: 500px;
@@ -82,3 +69,31 @@ body {
 	text-align: center;
 	margin:
 }
+
+.history {
+	width:400px;
+	height: 35px;
+	background-color: red;
+	margin-top: 250px;
+	color: white;
+	line-height: 35px;
+}
+
+/*.equal {
+	font-size: 30px
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
