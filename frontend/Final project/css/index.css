@@ -10,34 +10,25 @@ body {
 }
 
 .content {
-	height: 500px;
+	height: 600px;
 	background: url('http://thepropertyeducationgroup.com/wp-content/uploads/2016/01/bst_ninja-1030x579.jpg');
 	background-repeat: no-repeat;
 	background-size: cover; 
 }
 
-.operators {
-	width: 210px;
-	height: 210px;
-	float: left;
-	overflow: hidden;
-}
-
-
 .operators img {
-	width: 75px;
-	height: 70px;
+	width: 100px;
+	height: 90px;
+	margin-right: 20px
 }
 
-#shur1 {
-	display: inline;
-}
-#shur2 {
-	display: inline
+.operators img:hover {
+	cursor: pointer;
+	border-radius: 30px
 }
 
 .info {
-	height: 500px;
+	height: 600px;
 	background-color: #008000;
 }
 
@@ -45,6 +36,7 @@ body {
 	color: white;
 	font-weight: bold;
 	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif
 }
 
 .registration {
@@ -54,41 +46,149 @@ body {
 #NameArea {
 	margin: 0px 32px;
 	background-color: white;
-	border-radius: 5px	
+	color: black;
+	opacity: 0.8;
+	border-radius: 5px;
+	border: none;
+	width: 180px;
+	height: 40px;
+	text-align: center;
+	font-size: 20px
 }
 
+#NameArea::placeholder {
+	font-family:  "Comic Sans MS", cursive, sans-serif;
+	color: black;
+}
+
+.row {
+	height: 200px
+}
 .totalNumber {
 	width: 100px;
 	height: 100px;
 	float: right;
-	background: white;
-	position: relative;
-	top: 30px;
-	right: 50px;
-	border-radius: 20px;
+	background: black;
+	border-radius: 50px;
 	text-align: center;
-	margin:
+	margin: 50px 30px 0px 0px;
+	opacity: 0.8;
+	color: red;
+}
+
+#goal b {
+	font-size: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: #16EC0F
 }
 
 .history {
-	width:400px;
-	height: 35px;
-	background-color: red;
-	margin-top: 250px;
-	color: white;
-	line-height: 35px;
+	height: 200px
 }
 
-/*.equal {
-	font-size: 30px
+.historyDisplay {
+	width: 400px;
+    height: 40px;
+    opacity: 0.8;
+    border: none;
+    border-radius: 10px;
+    color: #16EC0F;
+    font-size: 30px;
+    padding: 0;
+    margin-top: 80px;
+    margin-left: 30px;
+    background-color: black
 }
-*/
 
+.equal {
+	height: 40px;
+	height: 200px
+}
 
+.thisNumber {
+	height: 200px
+}
 
+.thisNumber div {
+	width: 150px;
+	height: 100px;
+	border-radius: 70px;
+	background-color: black;
+	opacity: 0.8;
+	text-align: center;
+	margin-top: 50px
+}
 
+.thisNumber div h1 {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	line-height: 100px;
+	font-size: 65px;
+	color: #16EC0F
+}
 
+span {
+	font-size: 70px;
+    display: inline-block;
+    line-height: 200px;
+    margin-left: 70px
+}
 
+.col-md-8,.col-md-4 {
+	height: 200px
+}
+
+.button {
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: black;
+	font-size: 30px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	margin: 80px 10px 0px 47px;
+	color: #16EC0F;
+	padding: 0px;
+	border: none;
+}
+
+.button:hover {
+	background-color: #16EC0F;
+	color: black;
+}
+
+#shuriken {
+	display: inline-block;
+	margin: 55px 0px 0px 55px;
+
+}
+
+.weapon {
+	display: inline-block;
+	overflow: hidden;
+	background-image: url('../images/shuriken.png') !important;
+}
+
+.operator {
+	line-height: 100px;
+	margin-left: 0px;
+	display: inline-block;
+}
+
+.hints {
+	width: 200px;
+	height: 100px;
+	margin: 20px 0px 50px 50px;
+	background-color: black;
+	color: #16EC0F;
+	border: none;
+	border-radius: 50px;
+	font-size: 40px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.hints:hover {
+	background-color: #16EC0F;
+	color: black
+}
 
 
 

@@ -12,24 +12,55 @@
 		<div class="mainBackground">
 			<img src="https://chupacdn.s3.amazonaws.com/catalog/product/cache/1/thumbnail/1280x/17f82f742ffe127f42dca9de82fb58b1/1/2/12-vector-game-backgrounds-8320_imgs_8320_4.png" alt="background_image" id="mainBackground">
 		</div>
-			<div class="content col-md-9">
-				<div class="totalNumber"><h2 id="goal">41</h2></div>
-				<div class='history'>
-					<span>amren armen</span>
-					<span class='equal'>=</span>
-				</div>
-				<div class="operators">
-					<div id="shur1"><img src="images/shuriken.png" alt="shuriken"></div>
-					<div id="shur2"><img src="images/shuriken.png" alt="shuriken"></div>
+		<div class="content col-md-9">
+			<div class="row">
+				<div class="col-md-12 totalNumber">
+					<h2 id="goal"><b>41</b></h2>
 				</div>
 			</div>
-			<div class="info col-md-3">
-				<div class="registration">
-					<h2 class="name">#Name</h2>
-					<input type="text" id="NameArea" placeholder="Write your Name">
+			<div class='row secondRow'>
+				<div class="col-md-6 history">
+					<input type="text" class="historyDisplay"></input>
+				</div>
+				<div class="col-md-3 equal">
+					<span>=</span>
+				</div>
+				<div class="col-md-3 thisNumber">
+					<div>
+						<h1>67</h1>
+					</div>
 				</div>
 			</div>
+			<div class="row operators">
+				<div class="col-md-8">
+					<button  class="button">1</button>
+					<button  class="button">2</button>
+					<button  class="button">3</button>
+				</div>
+				<div class="col-md-4">
+					<div id="shuriken">
+						<div class="weapon">
+							<img src="images/plus.png" alt="shuriken">
+						</div>
+						<div class="weapon">
+							<img src="images/shuriken.png" alt="shuriken">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info col-md-3">
+			<div class="registration">
+				<h2 class="name">#Name</h2>
+				<input type="text" id="NameArea" placeholder="Write your Name">
+			</div>
+			<div class="hint">
+				<button class="hints">hint1</button>
+				<button class="hints">hint2</button>
+				<button class="hints">hint3</button>
+			</div>
+		</div>
 	</div>
 </body>
-	<script src='js/index.js'></script>
+<script src='js/index.js'></script>
 </html>
