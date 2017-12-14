@@ -45,7 +45,7 @@ io.on('connection', function(socket){
 
 		const player = players.filter(player => player.id === socket.id)[0];
 
-		io.emit('result', {total: total, history: history, color:player.color});
+		io.emit('result', {total: total, history: history, color:player.color, step: data});
 		socket.broadcast.emit('your turn', {armen: "armen"});
 	})
 });
