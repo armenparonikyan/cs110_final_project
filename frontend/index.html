@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Best final project ever</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
@@ -9,11 +10,65 @@
 	<h1 id="wait">Wait for other users</h1>
 	<input type="text" name="answer" id="input" class="invisible game-components">
 	<button onclick="send()" class="invisible game-components">Send</button>
-	<span id ="history" class="invisible game-components"></span>=<span id="total" class="invisible game-components"></span>
+
+	<div class="container-fluid">
+		<div class="mainBackground">
+			<img src="https://chupacdn.s3.amazonaws.com/catalog/product/cache/1/thumbnail/1280x/17f82f742ffe127f42dca9de82fb58b1/1/2/12-vector-game-backgrounds-8320_imgs_8320_4.png" alt="background_image" id="mainBackground">
+		</div>
+		<div class="content col-md-9">
+			<div class="row">
+				<div class="col-md-12 totalNumber">
+					<h2 id="goal"><b>41</b></h2>
+				</div>
+			</div>
+			<div class='row secondRow'>
+				<div class="col-md-6 history">
+					<span type="text" class="historyDisplay" id="history">0+9+8+7-3+5</span>
+				</div>
+				<div class="col-md-3 equal">
+					<span>=</span>
+				</div>
+				<div class="col-md-3 thisNumber">
+					<div>
+						<h1 id="total">67</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row operators">
+				<div class="col-md-8">
+					<button class="button" disabled data-value='1'>1</button>
+					<button class="button" disabled data-value='2'>2</button>
+					<button class="button disabled" disabled data-value='3'>3</button>
+				</div>
+				<div class="col-md-4">
+					<div id="shuriken">
+						<div class="weapon">
+							<img src="images/plus.png" alt="shuriken">
+						</div>
+						<div class="weapon">
+							<img src="images/shuriken.png" alt="shuriken">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info col-md-3">
+			<div class="registration">
+				<h2 class="name">#Name</h2>
+				<input type="text" id="NameArea" placeholder="Write your Name">
+			</div>
+			<div class="hint">
+				<button class="hints">hint1</button>
+				<button class="hints">hint2</button>
+				<button class="hints">hint3</button>
+			</div>
+		</div>
+	</div>
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/script.js"></script>
 </body>

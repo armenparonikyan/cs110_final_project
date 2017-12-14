@@ -18,6 +18,7 @@ app.use(async ctx => {
 const players = [];
 let total = 0;
 let history = "0";
+const goal = Math.floor(Math.random()*50) + 10;
 
 io.on('connection', function(socket){
 	console.log(socket.id);
@@ -30,8 +31,8 @@ io.on('connection', function(socket){
 
 		if (players.length === 2) {
 			console.log('barev');
-			io.emit('start game', {armen: "armen"});
-			io.sockets.sockets[players[0].id].emit('your turn', {armen: "armen"});
+			io.emit('start game', {goal: goal});
+			io.sockets.sockets[players[0].id].emit('your turn', {color: players[0].color});
 		}
 
 	} else {
@@ -42,7 +43,10 @@ io.on('connection', function(socket){
 		history += data;
 		total = eval(total + data);
 
-		io.emit('result', {total: total, history: history});
+		const player = players.filter(player => player.id === socket.id)[0];
+
+		io.emit('result', {total: total, history: history, color:player.color});
+		socket.broadcast.emit('your turn', {armen: "armen"});
 	})
 });
 
