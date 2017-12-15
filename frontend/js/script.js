@@ -105,6 +105,7 @@ socket.on('start game', function(data) {
 
 socket.on('your turn', data => {
 	console.log("your turn worked");
+	$(".button").removeClass('disabled').attr('disabled', false);
 });
 
 $('.button').click((e) => {
