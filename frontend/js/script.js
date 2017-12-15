@@ -63,6 +63,8 @@ const socket = io();
 let number = 0;
 let history = '';
 let goal = 0;
+let myTurn = false;
+let sendValue = "no";
 console.log('Heleluyah');
 
 socket.on('no space', data => {
@@ -106,6 +108,7 @@ socket.on('start game', function(data) {
 socket.on('your turn', data => {
 	console.log("your turn worked");
 	$(".button").removeClass('disabled').attr('disabled', false);
+  myTurn = true;
 });
 
 $('.button').click((e) => {
@@ -113,4 +116,14 @@ $('.button').click((e) => {
 	$('.button').removeClass('active');
 	$(e.target).addClass('active');
 	console.log($(e.target).data('value'));
+  sendValue = $(e.target).data('value');
 });
+
+$('#plus').click(e => {
+  if (myTurn && sendValue !== 'no') {
+    console.log("+" + sendValue);
+    socket.emit('user step', "+" + sendValue);
+  }
+});
+
+
