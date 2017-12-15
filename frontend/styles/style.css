@@ -16,6 +16,12 @@ body {
 	height: 250px
 }
 
+#myCanvas {
+	width: 100%;
+	height: 250px;
+}
+
+
 .content {
 	height: 600px;
 	background: url('http://thepropertyeducationgroup.com/wp-content/uploads/2016/01/bst_ninja-1030x579.jpg');
@@ -201,4 +207,15 @@ span {
 .active {
 	background-color: #16EC0F;
 	color: black;
+}
+
+.disabled {
+	cursor: not-allowed !important;
+	background-color: #b51414;
+	color: black;
+}
+
+.disabled:hover {
+	background-color: #9c9c9c;
+	color:white;
 }
