@@ -147,7 +147,7 @@ span {
     margin-left: 70px
 }
 
-.col-md-8,.col-md-4 {
+.col-md-8,.col-md-4{
 	height: 200px
 }
 
@@ -177,10 +177,7 @@ span {
 
 .weapon {
 	display: inline-block;
-	overflow: hidden;
-	background-image: url('../images/shuriken.png') !important;
 }
-
 .operator {
 	line-height: 100px;
 	margin-left: 0px;
@@ -218,4 +215,19 @@ span {
 .disabled:hover {
 	background-color: #9c9c9c;
 	color:white;
+}
+.weapon {
+	height: 200px;
+	margin-top: 57px;
+	margin-left: 30px
+}
+
+.weapon img {
+	display: inline-block;
+}
+
+.weapon img:hover {
+	background-color: #16EC0F;
+	border: none;
+	border-radius: 15px;
 }
