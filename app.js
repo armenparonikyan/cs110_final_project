@@ -30,7 +30,6 @@ io.on('connection', function(socket){
 
 
 		if (players.length === 2) {
-			console.log('barev');
 			io.emit('start game', {goal: goal});
 			io.sockets.sockets[players[0].id].emit('your turn', {color: players[0].color});
 		}
@@ -44,6 +43,9 @@ io.on('connection', function(socket){
 		total = eval(total + data);
 
 		const player = players.filter(player => player.id === socket.id)[0];
+		if (total >= goal) {
+			return io.emit('game over', {winner: player.color});
+		}
 
 		io.emit('result', {total: total, history: history, color:player.color, step: data});
 		socket.broadcast.emit('your turn', {armen: "armen"});

@@ -88,7 +88,7 @@ socket.on('result', data =>{
 	if(data.color===hero1.color){
 		hero1.x=hero2.x+((canvas.width-40)/goal)*parseInt(data.step[1]) * (data.step[0] === '+' ? 1  : -1);
 	} else {
-		hero2.x=hero1.x+((canvas.width-40)/goal)*parseInt(data.step[1]) * (data.step[0] === '+' ? 1  : -1);;
+		hero2.x=hero1.x+((canvas.width-40)/goal)*parseInt(data.step[1]) * (data.step[0] === '+' ? 1  : -1);
 	}
 	drawhero();
 	history += '<label style="color:'+ data.color +';">' + data.history.substring(data.history.length-2) + "</label>";
@@ -132,11 +132,14 @@ $('#minus').click(e => {
 		console.log("-" + sendValue);
 		socket.emit('user step', "-" + sendValue);
 		minusCount--;
-		// if (minusCount === 0) {
-		// 	$('#minus').attr
-		// }
+		if (minusCount === 0) {
+			$('#minus').addClass(disabled);
+		}
 		disableButtons();
 	}
 });
 
 
+socket.on('game over', data => {
+	console.log(data.winner[0].toUpperCase() + data.winner.slice(1) + " player is the winner.");
+});
