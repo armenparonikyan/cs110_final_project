@@ -227,3 +227,27 @@ span {
 	border: none;
 	border-radius: 15px;
 }
+
+.winnerWindow {
+    width: 400px;
+    border: none;
+    border-radius: 30px;
+    background-color: black;
+    position: absolute;
+	top: 153px;
+    z-index: 200;
+    left: 510px;
+}
+
+#winnerText {
+    width: 400px;
+    height: 200px;
+    border: none;
+    border-radius: 30px;
+    margin-top: 7px;
+}
+
+#winner {
+	color:#16EC0F;
+	text-align: center;
+}

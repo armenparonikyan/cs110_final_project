@@ -8,32 +8,31 @@
 <body>
 	<h1 id="sorry" class="invisible">Sorry other players are already playing</h1>
 	<h1 id="wait">Wait for other users</h1>
-	<input type="text" name="answer" id="input" class="invisible game-components">
-	<button onclick="send()" class="invisible game-components">Send</button>
 
 	<div class="container-fluid">
+		<div class="winnerWindow invisible">
+			<h3 id="winner"></h3>
+			<img src="http://i0.kym-cdn.com/photos/images/facebook/000/322/573/91d.png" alt="winnerText" id="winnerText">
+		</div>
 		<div class="mainBackground">
-		
-			<canvas id="myCanvas">
-				
-			</canvas>
+			<canvas id="myCanvas"></canvas>
 		</div>
 		<div class="content col-md-9">
 			<div class="row">
 				<div class="col-md-12 totalNumber">
-					<h2 id="goal"><b>41</b></h2>
+					<h2 id="goal"><b>0</b></h2>
 				</div>
 			</div>
 			<div class='row secondRow'>
 				<div class="col-md-6 history">
-					<span type="text" class="historyDisplay" id="history">0+9+8+7-3+5</span>
+					<span type="text" class="historyDisplay" id="history">0</span>
 				</div>
 				<div class="col-md-3 equal">
 					<span>=</span>
 				</div>
 				<div class="col-md-3 thisNumber">
 					<div>
-						<h1 id="total">67</h1>
+						<h1 id="total">0</h1>
 					</div>
 				</div>
 			</div>
@@ -57,11 +56,12 @@
 				<input type="text" id="NameArea" placeholder="Write your Name">
 			</div>
 			<div class="hint">
-				<button class="hints">hint1</button>
-				<button class="hints">hint2</button>
-				<button class="hints">hint3</button>
 			</div>
 		</div>
+		<audio controls class="invisible" id="fatality">
+		  <source src="audio/fatality.mp3" type="audio/mpeg">
+		  Your browser does not support the audio tag.
+		</audio>
 	</div>
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"

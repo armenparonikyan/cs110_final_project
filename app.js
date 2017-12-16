@@ -21,22 +21,24 @@ let history = "0";
 const goal = Math.floor(Math.random()*50) + 10;
 
 io.on('connection', function(socket){
-	console.log(socket.id);
-	if (players.length < 2) {
-		const player = new Player(socket.id, players.length === 1 ? "red" : "blue");
-		players.push(player);
 
-		console.log(players);
-
-
-		if (players.length === 2) {
-			io.emit('start game', {goal: goal});
-			io.sockets.sockets[players[0].id].emit('your turn', {color: players[0].color});
-		}
-
-	} else {
+	if (players.length >= 2) {
 		io.emit('no space', {message: "Not enough space go home"});
 	}
+
+	socket.on('user name', function(data) {
+		if (players.length < 2) {
+			const player = new Player(socket.id, players.length === 1 ? "red" : "blue", data.name);
+			players.push(player);
+
+			console.log(players);
+
+			if (players.length === 2) {
+				io.emit('start game', {goal: goal});
+				io.sockets.sockets[players[0].id].emit('your turn', {color: players[0].color});
+			}
+		}
+	});
 
 	socket.on('user step', function(data) {
 		history += data;
@@ -44,7 +46,7 @@ io.on('connection', function(socket){
 
 		const player = players.filter(player => player.id === socket.id)[0];
 		if (total >= goal) {
-			return io.emit('game over', {winner: player.color});
+			return io.emit('game over', {winner: player.name});
 		}
 
 		io.emit('result', {total: total, history: history, color:player.color, step: data});

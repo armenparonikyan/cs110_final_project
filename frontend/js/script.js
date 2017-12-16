@@ -68,21 +68,12 @@ let goal = 0;
 let myTurn = false;
 let sendValue = "no";
 let minusCount = 3;
-console.log('Heleluyah');
 
 socket.on('no space', data => {
-	console.log(data);
 	document.getElementById('sorry').style.display = "block";
 });
 
-const send = function(){
-	const value = document.getElementById('input').value;
-	console.log(value);
-	socket.emit('user step', value);
-};
-
 socket.on('result', data =>{
-	console.log(data);
 	const hero1=gameData.hero;
 	const hero2=gameData.hero2;
 	if(data.color===hero1.color){
@@ -91,7 +82,13 @@ socket.on('result', data =>{
 		hero2.x=hero1.x+((canvas.width-40)/goal)*parseInt(data.step[1]) * (data.step[0] === '+' ? 1  : -1);
 	}
 	drawhero();
-	history += '<label style="color:'+ data.color +';">' + data.history.substring(data.history.length-2) + "</label>";
+	history += '<label style="color:'+ data.color +';">' + data.history.substring(data.history.length-2) + "</label><a>";
+	let historyArr = history.split('<a>');
+	if (historyArr.length > 6) {
+		historyArr = historyArr.splice(historyArr.length-6, 6);
+		history = historyArr.join('<a>');
+		console.log(history);
+	}
 	$("#history").html(history);
 	$("#total").text(data.total);
 });
@@ -106,22 +103,18 @@ socket.on('start game', function(data) {
 });
 
 socket.on('your turn', data => {
-	console.log("your turn worked");
 	$(".button").removeClass('disabled').attr('disabled', false);
 	myTurn = true;
 });
 
 $('.button').click((e) => {
-	console.log('click');
 	$('.button').removeClass('active');
 	$(e.target).addClass('active');
-	console.log($(e.target).data('value'));
 	sendValue = $(e.target).data('value');
 });
 
 $('#plus').click(e => {
 	if (myTurn && sendValue !== 'no') {
-		console.log("+" + sendValue);
 		socket.emit('user step', "+" + sendValue);
 		disableButtons();
 	}
@@ -139,7 +132,18 @@ $('#minus').click(e => {
 	}
 });
 
-
 socket.on('game over', data => {
-	console.log(data.winner[0].toUpperCase() + data.winner.slice(1) + " player is the winner.");
+	$('.winnerWindow').removeClass('invisible');
+	$('#winner').text(data.winner + " is the winner");
+	document.getElementById('fatality').play();
 });
+
+$('#NameArea').change(e=> {
+	$('#NameArea').attr('disabled', true);
+	socket.emit('user name', {name: $('#NameArea').val()});
+});
+
+backImage.onload = drawhero;
+hero1.onload = drawhero;
+hero2.onload = drawhero;
+finish.onload = drawhero;
